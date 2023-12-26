@@ -6,11 +6,11 @@ import com.jys.bms.common.util.CreateDataModelUtil;
 /**
  * @Author wangyunfan
  * @Date 2023/12/22 10:14
- * @Description 应收月结明细
+ * @Description 收入月结明细
  */
-public class BMS_AI_MS_YS_M1 {
+public class BMS_AI_MS_SR_M1 {
     public static void execute(){
-        TableDefine tableDefine=TableDefine.newBillMasterTable("BMS_AI_MS_YS_M1","应收月结明细");
+        TableDefine tableDefine=TableDefine.newBillMasterTable("BMS_AI_MS_SR_M1","收入月结明细");
         tableDefine.addNumericField2("TAX_AMOUNT","税额",14,2,null);
         tableDefine.addNumericField2("PRICE_AMOUNT","除税金额",14,2,null);
         tableDefine.addNumericField2("TAX_PRICE_AMOUNT","金额",14,2,null);
@@ -22,7 +22,7 @@ public class BMS_AI_MS_YS_M1 {
         tableDefine.addDateField("SDATE","开始日期");
         tableDefine.addDateField("EDATE","结束日期");
         tableDefine.addDateField("CDATE","生成日期");
-
+        tableDefine.addNvarcharField("SCODE","源单据编号" ,100,null);
 
         tableDefine.addNvarcharBaseDataField("SKDW","收款单位","MD_BMS_CUSTOMER");
         tableDefine.addNvarcharBaseDataField("KHDW","客户单位","MD_BMS_CUSTOMER");
